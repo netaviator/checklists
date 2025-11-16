@@ -72,7 +72,7 @@ items:
 ```yaml
 checklist_name: "Cessna 172S Procedures"
 tailNumber:     "D-MEOW"
-description:    "Normal & Emergency"
+detail:    "Normal & Emergency"
 schemaVersion:  "1.0"
 categories:
   - name: "Normal"
