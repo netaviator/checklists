@@ -93,6 +93,12 @@
 
 \newcommand{\checkbox}{\makebox[3ex][r]{\Large\(\square\)}}
 
+\newcommand{\decisionbox}[1]{%
+  \begin{tcolorbox}[colback=yellow!10,colframe=black,arc=0mm,outer arc=0mm]
+    \textbf{#1}
+  \end{tcolorbox}%
+}
+
 \NewDocumentEnvironment{checklist}{m O{} +b}{%
   \def\checklist@nametmp{#1}%
   % Redefine item macros
@@ -181,7 +187,9 @@
 \renewcommand\headrulewidth{0.4pt}
 \fancyhead[L]{\protect\checklist@name/\protect\currentchaptype}
 \fancyhead[R]{\ifnum\value{section}>0 \thesection\quad\protect\currentsection\fi}
-\fancyfoot[L]{\textcolor{lightgray}{\footnotesize Revision \checklist@revision}}
+\fancyfoot[L]{\textcolor{lightgray}{\footnotesize
+  \if\relax\detokenize\expandafter{\checklist@revision}\relax
+  \else Revision \checklist@revision\fi}}
 \fancyfoot[C]{\textcolor{lightgray}{\footnotesize\thepage\ of \pageref{LastPage}}}
 \fancyfoot[R]{\textcolor{lightgray}{\footnotesize \checklist@issuedate}}
 

@@ -114,6 +114,18 @@ Available macros inside `checklist`:
 
 ---
 
+## ⚠️ Decision Box
+
+`\decisionbox{X}` draws a standalone bold callout box (yellow background, black frame) for a
+warning, caution, or decision point. Unlike `\decision`, it is not tied to a `checklist`
+environment and can be used anywhere in the document body.
+
+```latex
+\decisionbox{If engine fire persists: LAND IMMEDIATELY}
+```
+
+---
+
 ## 📚 Chapters
 
 Checklists are organized into **chapters**:
@@ -165,7 +177,7 @@ Example:
 
 * **Header Left** → Checklist name + current chapter type
 * **Header Right** → Section number + section title
-* **Footer Left** → Revision number
+* **Footer Left** → Revision number (hidden if `\checklistRevision` was never set)
 * **Footer Center** → Page X of Y
 * **Footer Right** → Issue date
 
