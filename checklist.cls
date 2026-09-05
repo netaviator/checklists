@@ -11,7 +11,6 @@
 \RequirePackage{etoolbox}
 
 \SetupKeyvalOptions{family=checklist,prefix=checklist@}
-\DeclareStringOption[4]{papersize}
 \DeclareBoolOption[false]{legal_disclaimer}
 \ProcessKeyvalOptions*
 
@@ -90,6 +89,7 @@
 % Checklist styling & environments
 % -----------------------------------------------------------------------------
 \tcbsetforeverylayer{colback=white,colframe=black,arc=0mm,outer arc=0mm}
+\tcbset{noborder/.style={boxrule=0mm,leftrule=0mm,rightrule=0mm,toprule=0mm,bottomrule=0mm}}
 
 \newcommand{\checkbox}{\makebox[3ex][r]{\Large\(\square\)}}
 
@@ -120,7 +120,7 @@
 \newcommand\checklist@issuedate{}
 
 \newcommand{\checklistName}[1]{\gdef\checklist@name{#1}}
-\newcommand{\checklistDetail}[1]{\gdef\checklist@detail{#1}}
+\newcommand{\checklistDescription}[1]{\gdef\checklist@detail{#1}}
 \newcommand{\checklistLogo}[1]{\gdef\checklist@logo{#1}}
 \newcommand{\checklistRevision}[1]{\gdef\checklist@revision{#1}}
 \newcommand{\checklistDateIssue}[1]{\gdef\checklist@issuedate{#1}}

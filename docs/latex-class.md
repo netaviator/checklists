@@ -20,11 +20,11 @@ It provides a clean layout, checklist environments, and metadata handling for of
 
 The class provides several **options**:
 
-| Option             | Default    | Description                                                                          |
-|--------------------| ---------- |--------------------------------------------------------------------------------------|
-| `papersize`        | `a4double` | Defines paper size & layout. Values: `a4double`, `a5double`, `a6double`, `a6single`. |
-| `legal_disclaimer` | `false`    | If set, adds a disclaimer box on the title page promting to read the POH.            |
-| Any other option   | –          | Passed directly to the `article` base class.                                         |
+| Option                                              | Default    | Description                                                                |
+|------------------------------------------------------|------------|-----------------------------------------------------------------------------|
+| `a4double` / `a5double` / `a6double` / `a6single`     | `a4double` | Defines paper size & layout. Pass one of these directly as a class option (not `papersize=...`). |
+| `legal_disclaimer`                                    | `false`    | If set, adds a disclaimer box on the title page promting to read the POH.  |
+| Any other option                                      | –          | Passed directly to the `article` base class.                                |
 
 ### Paper size mapping
 
@@ -175,6 +175,7 @@ Example:
 
 * Defaults: `colback=white`, `colframe=black`, square edges
 * Fully customizable via `tcolorbox` options passed in `checklist`.
+* Pass `noborder` to remove the box border entirely (keeps the fill color and title).
 
 Example:
 
@@ -182,6 +183,10 @@ Example:
 \begin{checklist}{Power Check}[colback=yellow!10,colframe=red!70!black]
   \checkitem{Throttle}{2000 RPM}
   \checkitem{Magnetos}{CHECK}
+\end{checklist}
+
+\begin{checklist}{Borderless Notes}[noborder]
+  \checkitem{Flaps}{UP}
 \end{checklist}
 ```
 
